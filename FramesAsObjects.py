@@ -1,39 +1,3 @@
-##################################
-################  notes:
-####
-
-#https://docs.blender.org/api/blender_python_api_2_65_5/info_tutorial_addon.html
-# Outline Copied from animation_animall.py (search blender files)
-# HELP
-# https://wiki.blender.org/index.php/Dev:Py/Scripts/Cookbook/Code_snippets/Interface
-#This is the right way to copy object instances here
-                #http://blender.stackexchange.com/questions/45099/duplicating-a-mesh-object
-'''
-                bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].select = True;
-                tmpSelect = True;
-                for c_o in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
-                    if c_o.hide == False:
-                       if c_o.select == True:
-                           tmpSelect = False;
-                for c in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
-                    if c.hide == False :
-                        c.select = tmpSelect; 
-'''
-'''        
-                bpy.context.scene.frame_set(  c_frame );
-                                SiblingLerp( o, o, c, 1, 2, 2)
-                                # https://docs.blender.org/api/blender_python_api_2_65_9/info_quickstart.html#animation
-                                # https://docs.blender.org/api/blender_python_api_2_77a_release/bpy.types.bpy_struct.html?highlight=keyframe_insert#bpy.types.bpy_struct.keyframe_insert
-                                
-                                o.keyframe_insert("location", frame = bpy.context.scene.frame_current)
-                                o.keyframe_insert("scale", frame = bpy.context.scene.frame_current)
-                                o.keyframe_insert("rotation_euler", frame = bpy.context.scene.frame_current)        
-'''
-                        
-# end notes
-#################
-#############################           
-
 
 ###########################################################                        
 #Copyright (c) 2017 Harrison Mansolf
