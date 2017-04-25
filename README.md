@@ -5,7 +5,6 @@ Tested in blender 2.70
 
 
 # About this pluggin:
-
     - This was conceived and coded to create a simpler 
         animation system that could coexist with 
         the built-in animation system
@@ -29,8 +28,7 @@ Tested in blender 2.70
         frame-objects, or make them visible/invisible 
         based on their location in the timeline. 
         
-   # How to use: 
-        
+# How to use: 
     - Select an object or armature in object mode 
         (RECOMMENDED: duplicate the object, and use the duplicate)
     - Go to the Animation tab-> FramesAsObjects_ForObject
