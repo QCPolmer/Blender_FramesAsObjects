@@ -53,6 +53,6 @@ Tested in blender 2.70
          panel, 
          and click 'Make F.A.O. from Frames'
          then an FramesAsObjects animation will be generated
-         from whatever action is active on on object
+         from whatever action is active on object
          (WARNING: DOING THIS REMOVES AN OBJECTS STANDARD ANIMATION
             IT IS RECOMMENDED TO DUPLICATE AN OBJECT BEFORE DOING THIS)
