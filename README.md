@@ -22,7 +22,7 @@ Tested in blender 2.70
         or deleted like any other object,
         meaning all frames of a object can be manipulated 
         from a single frame of animation. 
-    - Optional one button convert to and from 
+    - Optional one button convert too and from 
         standard animations.
     - This pluggin also includes a tab to select various 
         frame-objects, or make them visible/invisible 
