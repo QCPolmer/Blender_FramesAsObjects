@@ -8,7 +8,7 @@
 # https://wiki.blender.org/index.php/Dev:Py/Scripts/Cookbook/Code_snippets/Interface
 #This is the right way to copy object instances here
                 #http://blender.stackexchange.com/questions/45099/duplicating-a-mesh-object
-                '''
+'''
                 bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].select = True;
                 tmpSelect = True;
                 for c_o in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
@@ -18,8 +18,8 @@
                 for c in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
                     if c.hide == False :
                         c.select = tmpSelect; 
-                        '''
-                '''        
+'''
+'''        
                 bpy.context.scene.frame_set(  c_frame );
                                 SiblingLerp( o, o, c, 1, 2, 2)
                                 # https://docs.blender.org/api/blender_python_api_2_65_9/info_quickstart.html#animation
@@ -28,7 +28,7 @@
                                 o.keyframe_insert("location", frame = bpy.context.scene.frame_current)
                                 o.keyframe_insert("scale", frame = bpy.context.scene.frame_current)
                                 o.keyframe_insert("rotation_euler", frame = bpy.context.scene.frame_current)        
-                 '''
+'''
                         
 # end notes
 #################
@@ -59,7 +59,7 @@
         or deleted like any other object,
         meaning all frames of a object can be manipulated 
         from a single frame of animation. 
-    - Optional one button convert to and from 
+    - Optional one button convert too and from 
         standard animations.
     - This pluggin also includes a tab to select various 
         frame-objects, or make them visible/invisible 
@@ -93,7 +93,7 @@
          panel, 
          and click 'Make F.A.O. from Frames'
          then an FramesAsObjects animation will be generated
-         from whatever action is active on on object
+         from whatever action is active on object
          (WARNING: DOING THIS REMOVES AN OBJECTS STANDARD ANIMATION
             IT IS RECOMMENDED TO DUPLICATE AN OBJECT BEFORE DOING THIS)
 
@@ -106,7 +106,7 @@ bl_info = {
     "blender": (2, 69, 7),
     'location': 'Tool bar > Animation tab > FramesAsObjects',
     'description': 'Allows objects to be used as animation frames',
-    'warning': 'ALPHA ADDON, USE AT YOUR OWN RISK!!!',
+    'warning': 'ALPHA ADDON ',
     "support": "TESTING",
     'wiki_url': 'http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Animation/AnimAll',
     'tracker_url': 'https://developer.blender.org/T24874',
