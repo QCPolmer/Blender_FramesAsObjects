@@ -1,4 +1,3 @@
-
 ###########################################################                        
 #Copyright (c) 2017 Harrison Mansolf
 #This code is open source under the MIT license.
