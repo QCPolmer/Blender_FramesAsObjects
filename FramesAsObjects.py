@@ -1,3 +1,40 @@
+##################################
+################  notes:
+####
+
+#https://docs.blender.org/api/blender_python_api_2_65_5/info_tutorial_addon.html
+# Outline Copied from animation_animall.py (search blender files)
+# HELP
+# https://wiki.blender.org/index.php/Dev:Py/Scripts/Cookbook/Code_snippets/Interface
+#This is the right way to copy object instances here
+                #http://blender.stackexchange.com/questions/45099/duplicating-a-mesh-object
+'''
+                bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].select = True;
+                tmpSelect = True;
+                for c_o in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
+                    if c_o.hide == False:
+                       if c_o.select == True:
+                           tmpSelect = False;
+                for c in bpy.context.scene.objects[tmpObs[i].CustAnim_FramePool].children:
+                    if c.hide == False :
+                        c.select = tmpSelect; 
+'''
+'''        
+                bpy.context.scene.frame_set(  c_frame );
+                                SiblingLerp( o, o, c, 1, 2, 2)
+                                # https://docs.blender.org/api/blender_python_api_2_65_9/info_quickstart.html#animation
+                                # https://docs.blender.org/api/blender_python_api_2_77a_release/bpy.types.bpy_struct.html?highlight=keyframe_insert#bpy.types.bpy_struct.keyframe_insert
+                                
+                                o.keyframe_insert("location", frame = bpy.context.scene.frame_current)
+                                o.keyframe_insert("scale", frame = bpy.context.scene.frame_current)
+                                o.keyframe_insert("rotation_euler", frame = bpy.context.scene.frame_current)        
+'''
+                        
+# end notes
+#################
+#############################           
+
+
 ###########################################################                        
 #Copyright (c) 2017 Harrison Mansolf
 #This code is open source under the MIT license.
@@ -288,7 +325,7 @@ bpy.utils.register_class(AddFrame)
 
 class ShowFramesAfterNBefore(bpy.types.Operator):
     bl_idname = "mesh.frames_before_n_after" #NAME HERE
-    bl_label = "Select Frame-Objs:" #Text here
+    bl_label = "Show Frame-Objs:" #Text here
     
     def invoke(self, context, event):
         tmpObs = bpy.context.selected_objects;
@@ -468,7 +505,7 @@ bpy.utils.register_class(SelectCustamAnim_FromFrame)
 
 class SelectVisFrams_FromCustAnim(bpy.types.Operator):
     bl_idname = "mesh.select_visible_frames_from_custom_anim" #NAME HERE
-    bl_label = "Select All frame-obs From Anim" #Text here
+    bl_label = "Select visble frame-obs From Anim" #Text here
     
     def invoke(self, context, event):
         tmpObs = bpy.context.selected_objects;
@@ -615,7 +652,7 @@ class PanelThree(View3DPanel, bpy.types.Panel):
         row25 = box2.row()
         row25.operator(  "mesh.select_cust_anim_from_frames")
         row23_1 = box2.row()
-        row23_1.label( "Select frame-objs before ")
+        row23_1.label( "Show frame-objs before ")
         row23_2 = box2.row()
         row23_2.label( "and after current frame:")
         row23 = box2.row()
