@@ -115,7 +115,7 @@ bl_info = {
 
 import bpy
 from bpy.props import *
-
+from bpy.app.handlers import persistent
 
 
 ZERO_PADDING_FOR_FRAMES = 6
@@ -787,7 +787,8 @@ def Optimize_Skip_Recalc(i, curframe):
     #
     # return False if either was false
     return True;
- 
+
+@persistent
 def FrameChangeHandler(scene):
     if not bpy.context.scene.Cust_Anim_SYSTEM_ON: return
     
@@ -815,16 +816,19 @@ def register():
     for i in range( (bpy.app.handlers.frame_change_pre.__len__()-1), -1, -1):
         if bpy.app.handlers.frame_change_pre[i].__name__ == FrameChangeHandler.__name__:
             bpy.app.handlers.frame_change_pre.remove( bpy.app.handlers.frame_change_pre[i]);
+    # bpy.app.handlers.frame_change_pre.append(FrameChangeHandler)   
     bpy.app.handlers.frame_change_pre.append(FrameChangeHandler)   
-    
     bpy.utils.register_class(PanelThree)
     bpy.utils.register_class(PanelTwo)
     bpy.utils.register_class(PanelOne)
-    
+
+     
+   
 def unregister():
     for i in range( (bpy.app.handlers.frame_change_pre.__len__()-1), -1, -1):
         if bpy.app.handlers.frame_change_pre[i].__name__ == FrameChangeHandler.__name__:
             bpy.app.handlers.frame_change_pre.remove( bpy.app.handlers.frame_change_pre[i]);
+    bpy.app.handlers.frame_change_pre.append(FrameChangeHandler)   
     
     bpy.utils.unregister_class(PanelThree)
     bpy.utils.unregister_class(PanelTwo)
@@ -832,6 +836,8 @@ def unregister():
     
     #bpy.app.handlers.frame_change_pre.remove(FrameChangeHandler)   
     
+
+
 #For script
 # UnComment below out if running as script
 #register()
